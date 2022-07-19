@@ -1,0 +1,13 @@
+diff --git a/node_modules/@nutui/nutui-react/dist/esm/Input.js b/node_modules/@nutui/nutui-react/dist/esm/Input.js
+index 3832d6d..8f4b1f0 100644
+--- a/node_modules/@nutui/nutui-react/dist/esm/Input.js
++++ b/node_modules/@nutui/nutui-react/dist/esm/Input.js
+@@ -159,7 +159,7 @@ var Input = function Input(props) {
+   }, label) : null), React__default.createElement("input", {
+     className: "input-text",
+     type: type,
+-    placeholder: locale.placeholder || placeholder,
++    placeholder: placeholder,
+     disabled: disabled,
+     readOnly: readonly,
+     value: inputValue,

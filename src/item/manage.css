@@ -1,0 +1,22 @@
+.item >h2{
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: rgb(144, 156, 164);
+    font-weight: 400;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+.upload{
+    display: flex;
+    justify-content:center;
+}
+
+.item{
+    padding: 0px 0px 0px 0px;
+    height: 100%;
+}
+
+.submit{
+    margin-top: 17px;
+}

@@ -1,0 +1,14 @@
+ul{
+    margin: 0;
+    padding-left: 5%;
+}
+
+li{
+    list-style-type:none;
+    margin: 0;
+    padding-bottom: 3%; 
+}
+
+.count{
+    margin-left: 5px;
+}

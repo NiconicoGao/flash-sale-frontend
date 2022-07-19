@@ -1,0 +1,14 @@
+.outside{
+    margin-top: 5%;
+    margin-bottom: 3%;
+    text-align:center;
+}
+
+.price{
+    font-size: 50px;
+}
+
+.buy{
+    display:flex;
+    justify-content:center;
+}
