@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# High Concurrency Online Shopping System
+Loboshop is a web service for online flash sale that provides high throughput and availability under huge user flow. It features a great handling capacity with more than 2000 req/s on a single t2.micro instance (1 CPU,1G memory).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Feature
+- Beautiful user interface by **React**
+- Exact stock manangement by **Optimistic** **Lock** and **TCC** (Try-confirm-cancel)
+- Asynchronously peak-load shifting by **ActiveMQ**
+- High concurrency stock check by **Lua** on **Redis**
+- Distributed ID generator algorithm **Snowflake**
+- Support request throttling and Circuit-breaker
+- DB Index Optimization
+- Separated front-end and back-end
 
-## Available Scripts
+## code
+Front-end: https://github.com/NiconicoGao/flash-sale-frontend \
+Back-end: https://github.com/NiconicoGao/flash-sale-backend \
+Demo: http://54.201.152.192/shop 
 
-In the project directory, you can run:
+## Process Flow
+Sequence Chart
+![Sequence Chart](./image/2.jpg)
+Flow Chart
+![Flow Chart](./image/3.jpg)
+Specifically, we need a shell to synchronize data between Redis and MySQL because network error may occur causing data inconsistency. 
+## Achitecture 
+![Architecture Chart](./image/1.jpg)
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Load Test
+Install K6 by instruction https://k6.io/docs/getting-started/installation/ 
+and run
+>    k6 run ./test1
+![Load Test](./image/4.png)
+You can also use K6 Cloud to get a pretty graph.
+![Load Test](./image/5.png)
+However, free user have only 50 VUs maximum. 
+## Screen Shot
+![ScreenShot](./image/6.png)
+![ScreenShot](./image/7.png)
+![ScreenShot](./image/8.png)
